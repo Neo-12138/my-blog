@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>工作任务</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/github.css">
+</head>
+<body>
+  <header>
+    <h1>工作任务</h1>
+    <nav>
+      <a href="../index.html">首页</a>
+      <a href="../about.html">关于我</a>
+    </nav>
+  </header>
+  <main>
+    <p>工作任务：</p>
+<p>1、zbar精简到50kb以内 暂停 已精简到100kb</p>
+<p>2、熟悉一下 1706 的编译环境，SDK_release_400rc6的工程（台湾多方）官网：<a href="https://support.augentix.com/projects/sdk-r3-x/wiki/SDK_Build_User_Guide">SDK Build User Guide - SDK r3.x - Augentix Support</a></p>
+<p>3、通过微信群，了解insta平台（iv代码），蓝牙配网的刘成，并结合代码实现蓝牙配网</p>
+<p><img alt="image-20250626092255322" src="C:\Users\10633\AppData\Roaming\Typora\typora-user-images\image-20250626092255322.png" /></p>
+<p>这个sdk 是 insta平台的代码包，code_sdk-iv624.rar 里面的代码是基于这个 移植的，insta的代码都放在iv目录下</p>
+<p>4、使用 现有获取图像的接口， 精简裁剪 mp4 封装库  暂停 未编译通过</p>
+<p>5、</p>
+<p>1 解压 sdk 代码2个压缩包在 SDK_release_400rc6目录下 </p>
+<p>2 配置buildroot 环境变量 在vim ~/.bashrc\n 文件末尾添加 SDK_release_400rc6/buildroot/dl 路径 export BR2_DL_DIR=/xxx/SDK_release_400rc6/buildroot/dl </p>
+<p>3 编译操作 $ cd <SDK_PATH>/firmware/buid $ . set_env_var.sh HC1706H // Initial Build (初始构建) $ make distclean &amp;&amp; make hc1706h-agt706-3_defconfig &amp;&amp; make all  // 第一次編譯(或更換 product config) // Clean Build (清除 构建) $ make clean &amp;&amp; make update SDK_VER=xxx.xxx.xxx  </p>
+  </main>
+  <footer>版权所有 © 嵌入式开发笔记</footer>
+  <script src="../js/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+</html>

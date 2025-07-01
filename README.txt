@@ -1,12 +1,9 @@
 
-📦 使用说明：
+📦 使用说明（双击 .bat 文件自动上传博客）：
 
-1. 解压后，将 upload_blog.bat 放入你的博客目录 markdown_blog_final 下。
-2. 双击 upload_blog.bat，它将自动完成以下步骤：
-   - 初始化 Git 仓库（如未初始化）
-   - 添加远程仓库地址（你的 GitHub 仓库）
-   - 添加修改并提交
-   - 推送更新到 GitHub Pages
-3. 成功后，可访问：https://neo-12138.github.io/my-blog/
+1. 解压本压缩包，将所有文件放到任意位置。
+2. 双击 upload_blog.bat 即可自动上传博客。
+3. 它会调用 PowerShell 脚本 upload_blog.ps1 来执行博客生成与上传，并防止窗口闪退。
 
-📌 如果有任何问题，可以把报错内容复制给 ChatGPT。
+⚠️ 如果提示“脚本被禁止运行”，请在 PowerShell 中手动运行一次以下命令以解除限制：
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
