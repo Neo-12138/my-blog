@@ -1,18 +1,25 @@
-﻿# 鑷姩涓婁紶鍗氬鍒?GitHub锛圥owerShell 鐗堬級
+﻿# 自动上传博客到 GitHub（PowerShell 版本）
 
+# 设置你的博客目录（请根据实际路径修改，如果你的路径没有中文，可以用单斜杠）
+Set-Location -LiteralPath "F:\\工作资料\\工作笔记\\学习\\我的博客\\markdown_blog_final"
 
-Set-Location -Path "F:\宸ヤ綔璧勬枡\宸ヤ綔绗旇\瀛︿範\鎴戠殑鍗氬\markdown_blog_final"
+# 生成 HTML 页面
 python generate_blog.py
 
+# 初始化 Git 仓库（如果尚未初始化）
 if (!(Test-Path ".git")) {
     git init
     git remote add origin "https://github.com/Neo-12138/my-blog.git"
     git branch -M main
 }
 
+# 添加并提交所有更改
 git add .
-git commit -m "鑷姩鏇存柊鍗氬 $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+git commit -m "自动更新博客 $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+
+# 推送到远程仓库
 git push origin main
 
-Write-Host "n鉁?鍗氬涓婁紶瀹屾垚锛佷綘鐜板湪鍙互璁块棶: https://neo-12138.github.io/my-blog/" -ForegroundColor Green
+# 提示成功信息
+Write-Host "`n✅ 博客上传完成！你现在可以访问: https://neo-12138.github.io/my-blog/" -ForegroundColor Green
 Pause
