@@ -1,0 +1,1 @@
+# Hello World\n\n这是用 Typora 写的第一篇博客文章。\n\n```c\nprintf("Hello Embedded");\n```
