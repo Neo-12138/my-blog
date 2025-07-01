@@ -17,11 +17,14 @@ if (!(Test-Path ".git")) {
     git branch -M main
 }
 
+# 拉取远程分支，防止 push 被拒绝（如远程有更新）
+git pull --rebase origin main
+
 # 添加并提交所有更改
 git add .
 git commit -m "自动更新博客 $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 
-# 推送到远程仓库（可选加上错误处理）
+# 推送到远程仓库
 git push origin main
 
 # 提示完成
