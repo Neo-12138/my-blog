@@ -1,7 +1,5 @@
 ﻿# 鑷姩涓婁紶鍗氬鍒?GitHub锛圥owerShell 鐗堬級
 
-git config --global --add safe.directory "F:\宸ヤ綔璧勬枡\宸ヤ綔绗旇\瀛︿範\鎴戠殑鍗氬\markdown_blog_final"
-
 
 Set-Location -Path "F:\宸ヤ綔璧勬枡\宸ヤ綔绗旇\瀛︿範\鎴戠殑鍗氬\markdown_blog_final"
 python generate_blog.py
