@@ -1,29 +1,41 @@
-# 忽略 Python 脚本生成的缓存
+# ❗ Python 缓存目录（如有自动生成 _sidebar 脚本）
 __pycache__/
 *.py[cod]
 
-# 忽略临时 Markdown 编辑文件
+# 📄 Markdown 编辑器产生的临时文件
 *.tmp
 *.bak
 *.swp
 *.swo
 
-# 忽略日志文件
+# 🧪 日志文件
 *.log
 
-# 忽略 Windows 批处理文件和上传脚本（你可以手动添加）
-update.bat
-deploy.bat
+# 🛠 Windows 批处理文件或本地上传脚本（可根据实际保留）
+upload_blog.bat
+upload_blog.ps1
 deploy.sh
+deploy.bat
+update.bat
 
-# 忽略 ZIP 包和中间文件
+# 📦 临时打包 ZIP 文件
 *.zip
 
-# 忽略 VS Code 配置等
+# 🧱 编译中间文件或临时输出（可自定义扩展名）
+*.out
+*.exe
+*.o
+
+# 🧩 Visual Studio Code 配置
 .vscode/
+
+# 🍎 MacOS 系统文件
 .DS_Store
+
+# 🪟 Windows 缓存文件
 Thumbs.db
 desktop.ini
 
-# 可选：忽略 README.txt 或 READEME.txt（如果你只是临时写的说明）
+# ❌ 忽略误写的 README（注意拼写）
 READEME.txt
+README.txt

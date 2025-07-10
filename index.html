@@ -7,7 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ✅ 关键：静态设置 GitHub Pages 上的 base 路径（my-blog 是你的仓库名） -->
-  <base href="/my-blog/">
+  <script>
+    (function () {
+      var isGithubPages = location.hostname === 'neo-12138.github.io';
+      var base = document.createElement('base');
+      base.href = isGithubPages ? '/my-blog/' : './';
+      document.head.appendChild(base);
+    })();
+  </script>
 
   <!-- Docsify 默认主题 -->
   <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
