@@ -6,22 +6,10 @@
   <title>My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--
-    自动设置 <base href> 标签，确保 GitHub Pages 和本地预览路径都正确。
-    - 如果是本地开发（localhost 或 file 协议），则使用 './'
-    - 如果是线上部署到 GitHub Pages，则使用 '/my-blog/' （根据你的仓库名来定）
-    这个标签是 Docsify 能正确加载资源、跳转链接的关键。
-  -->
-  <script>
-    (function () {
-      var isLocal = location.hostname === 'localhost' || location.protocol === 'file:';
-      var base = document.createElement('base');
-      base.href = isLocal ? './' : '/my-blog/';
-      document.head.appendChild(base);
-    })();
-  </script>
+  <!-- ✅ 关键：静态设置 GitHub Pages 上的 base 路径（my-blog 是你的仓库名） -->
+  <base href="/my-blog/">
 
-  <!-- 引入 Docsify 默认主题样式（vue风格） -->
+  <!-- Docsify 默认主题 -->
   <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 
   <style>
@@ -38,14 +26,13 @@
       border-radius: 6px;
     }
 
-    /* 🌙 暗黑主题样式 */
     .dark #theme-switcher {
       background: #333;
       color: #eee;
       border-color: #444;
     }
 
-    /* 📌 子目录导航栏样式（右侧浮动） */
+    /* 📌 子目录导航样式 */
     .app-sub-sidebar {
       position: fixed;
       top: 80px;
@@ -61,7 +48,7 @@
 </head>
 
 <body>
-  <!-- 🎨 顶部主题切换器，允许用户切换不同 Docsify 风格 -->
+  <!-- 🎨 主题切换器 -->
   <div id="theme-switcher">
     🎨 主题：
     <select onchange="switchTheme(this.value)">
@@ -72,7 +59,7 @@
     </select>
   </div>
 
-  <!-- Docsify 的文档渲染入口 -->
+  <!-- Docsify 内容渲染区域 -->
   <div id="app">加载中...</div>
 
   <script>
@@ -82,23 +69,23 @@
       themeLink.href = '//cdn.jsdelivr.net/npm/docsify/lib/themes/' + themeName + '.css';
     }
 
-    // 📚 Docsify 初始化配置
+    // Docsify 配置
     window.$docsify = {
-      name: '📘 我的嵌入式博客',      // 顶部项目标题
-      repo: '',                      // GitHub 仓库链接（可留空）
-      loadSidebar: true,            // 是否加载 _sidebar.md 文件作为侧边栏
-      subMaxLevel: 2,               // 子目录导航层级，默认展示到 H3
-      homepage: 'README.md',        // 默认首页内容
+      name: '📘 我的嵌入式博客',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      homepage: 'README.md',
       search: {
-        paths: 'auto',              // 自动生成搜索索引
+        paths: 'auto',
         placeholder: '🔍 搜索文档',
         noData: '❌ 没有匹配结果',
-        depth: 3                   // 搜索时索引的标题深度
+        depth: 3
       }
     };
   </script>
 
-  <!-- 加载 Docsify 主脚本 -->
+  <!-- Docsify 主脚本 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <!-- 搜索插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
