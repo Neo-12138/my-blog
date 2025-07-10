@@ -6,11 +6,11 @@
   <title>My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 默认主题样式 -->
+  <!-- Docsify 默认主题样式 -->
   <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 
   <style>
-    /* 右上角主题切换菜单 */
+    /* 🎨 右上角主题切换器样式 */
     #theme-switcher {
       position: fixed;
       top: 10px;
@@ -29,7 +29,7 @@
       border-color: #444;
     }
 
-    /* 右侧浮动子目录样式 */
+    /* 📌 右侧浮动子目录（子标题导航） */
     .app-sub-sidebar {
       position: fixed;
       top: 80px;
@@ -56,35 +56,35 @@
     </select>
   </div>
 
-  <!-- Docsify 渲染区域 -->
-  <div id="app">Loading...</div>
+  <!-- Docsify 渲染容器 -->
+  <div id="app">加载中...</div>
 
   <script>
-    // 切换主题函数
+    // 🎨 切换主题函数
     function switchTheme(themeName) {
       const themeLink = document.getElementById('theme-style');
       themeLink.href = '//cdn.jsdelivr.net/npm/docsify/lib/themes/' + themeName + '.css';
     }
 
-    // Docsify 配置
+    // 📚 Docsify 配置
     window.$docsify = {
-      name: 'My Blog',
+      name: '📘 我的嵌入式博客',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
       homepage: 'README.md',
       search: {
         paths: 'auto',
-        placeholder: '搜索文档',
-        noData: '未找到结果',
+        placeholder: '🔍 搜索文档',
+        noData: '❌ 没有匹配结果',
         depth: 3
       }
     };
   </script>
 
-  <!-- Docsify 主脚本 -->
+  <!-- 📦 Docsify 主脚本 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <!-- 搜索插件 -->
+  <!-- 🔍 搜索插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 
