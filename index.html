@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 默认主题，启动后可切换 -->
+  <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+
+  <style>
+    /* 固定右上角的主题切换菜单 */
+    #theme-switcher {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      z-index: 9999;
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 6px;
+    }
+
+    .dark #theme-switcher {
+      background: #333;
+      color: #eee;
+      border-color: #444;
+    }
+
+    .app-sub-sidebar {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      width: 200px;
+      max-height: 80%;
+      overflow: auto;
+      border-left: 2px solid #ccc;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🌙 主题切换菜单 -->
+  <div id="theme-switcher">
+    🎨 主题：
+    <select onchange="switchTheme(this.value)">
+      <option value="vue">默认</option>
+      <option value="dark">暗黑</option>
+      <option value="pure">纯净</option>
+      <option value="buble">Buble</option>
+    </select>
+  </div>
+
+  <div id="app">Loading...</div>
+
+  <script>
+    // 🌈 主题切换函数
+    function switchTheme(themeName) {
+      const themeLink = document.getElementById('theme-style');
+      themeLink.href = '//cdn.jsdelivr.net/npm/docsify/lib/themes/' + themeName + '.css';
+    }
+
+    window.$docsify = {
+      name: 'My Blog',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      basePath: './docs/',
+      homepage: 'README.md',
+      search: {
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '找不到结果',
+        depth: 3
+      }
+    };
+  </script>
+
+  <!-- Docsify 主脚本 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <!-- 搜索插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+</body>
+
+</html>

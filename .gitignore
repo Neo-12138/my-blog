@@ -1,0 +1,29 @@
+# 忽略 Python 脚本生成的缓存
+__pycache__/
+*.py[cod]
+
+# 忽略临时 Markdown 编辑文件
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# 忽略日志文件
+*.log
+
+# 忽略 Windows 批处理文件和上传脚本（你可以手动添加）
+update.bat
+deploy.bat
+deploy.sh
+
+# 忽略 ZIP 包和中间文件
+*.zip
+
+# 忽略 VS Code 配置等
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 可选：忽略 README.txt 或 READEME.txt（如果你只是临时写的说明）
+READEME.txt
