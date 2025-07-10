@@ -6,11 +6,11 @@
   <title>My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 默认主题，启动后可切换 -->
+  <!-- 默认主题样式 -->
   <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 
   <style>
-    /* 固定右上角的主题切换菜单 */
+    /* 右上角主题切换菜单 */
     #theme-switcher {
       position: fixed;
       top: 10px;
@@ -29,6 +29,7 @@
       border-color: #444;
     }
 
+    /* 右侧浮动子目录样式 */
     .app-sub-sidebar {
       position: fixed;
       top: 80px;
@@ -44,7 +45,7 @@
 </head>
 
 <body>
-  <!-- 🌙 主题切换菜单 -->
+  <!-- 🎨 主题切换器 -->
   <div id="theme-switcher">
     🎨 主题：
     <select onchange="switchTheme(this.value)">
@@ -55,26 +56,27 @@
     </select>
   </div>
 
+  <!-- Docsify 渲染区域 -->
   <div id="app">Loading...</div>
 
   <script>
-    // 🌈 主题切换函数
+    // 切换主题函数
     function switchTheme(themeName) {
       const themeLink = document.getElementById('theme-style');
       themeLink.href = '//cdn.jsdelivr.net/npm/docsify/lib/themes/' + themeName + '.css';
     }
 
+    // Docsify 配置
     window.$docsify = {
       name: 'My Blog',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
-      basePath: './docs/',
       homepage: 'README.md',
       search: {
         paths: 'auto',
-        placeholder: '搜索',
-        noData: '找不到结果',
+        placeholder: '搜索文档',
+        noData: '未找到结果',
         depth: 3
       }
     };
