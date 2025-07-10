@@ -4,10 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>My Blog</title>
-  <base href="/my-blog/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Docsify 默认主题样式 -->
+  <script>
+    // 自动设置 <base href> 以支持 GitHub Pages 和本地预览
+    (function () {
+      var isLocal = location.protocol === 'file:';
+      var base = document.createElement('base');
+      base.href = isLocal ? './' : '/my-blog/';
+      document.head.appendChild(base);
+    })();
+  </script>
+
   <link id="theme-style" rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
 
   <style>
