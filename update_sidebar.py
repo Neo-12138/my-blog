@@ -1,7 +1,7 @@
 import os
 from collections import defaultdict
 
-DOCS_DIR = "docs"
+DOCS_DIR = "."
 SIDEBAR_FILE = os.path.join(DOCS_DIR, "_sidebar.md")
 
 # 固定导航项
